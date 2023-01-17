@@ -66,8 +66,8 @@ EOF
 
 #Update apt package index with the new repository and install kubectl:
 sudo apt-get update
-sudo apt-get install docker-ce
-sudo apt-get install kubelet=1.15.7-00 kubeadm=1.15.7-00 kubectl=1.15.7-00
+sudo apt-get install -y docker-ce
+sudo apt-get install -y kubelet=1.15.7-00 kubeadm=1.15.7-00 kubectl=1.15.7-00
 
 clear
 echo
@@ -97,6 +97,9 @@ read ans
 if [ $ans = y ] || [ $ans = Y ] || [ $ans = yes ]
         then
 
+sleep 5
+echo creating files for configuration
+sleep 5
 echo '
 #!/bin/bash
 mkdir -p $HOME/.kube
@@ -137,8 +140,7 @@ echo
 echo
 echo !!!!APPLYING SOME CONFIGURATION!!!!!
 sleep 5
-kubectl create -f https://docs.projectcalico.org/manifests/tigera-operator.yaml
-kubectl create -f https://docs.projectcalico.org/manifests/custom-resources.yaml
+
 
 
 
