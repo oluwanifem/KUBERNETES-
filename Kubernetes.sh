@@ -67,7 +67,7 @@ EOF
 #Update apt package index with the new repository and install kubectl:
 sudo apt-get update
 sudo apt-get install docker-ce
-sudo apt-get kubelet=1.15.7-00 kubeadm=1.15.7-00 kubectl=1.15.7-00
+sudo apt-get install kubelet=1.15.7-00 kubeadm=1.15.7-00 kubectl=1.15.7-00
 
 clear
 echo
