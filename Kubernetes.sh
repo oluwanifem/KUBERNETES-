@@ -69,7 +69,9 @@ sudo apt-get update
 sudo apt-get install -y docker-ce
 sudo apt-get install -y kubelet=1.15.7-00 kubeadm=1.15.7-00 kubectl=1.15.7-00
 
-clear
+sudo apt-mark hold docker-ce kubelet kubeadm kubectl
+echo "net.bridge.bridge-nf-call-iptables=1" | sudo tee -a /etc/sysctl.confclear
+sudo sysctl -p
 echo
 echo
 echo
